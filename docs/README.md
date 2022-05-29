@@ -13,6 +13,12 @@ footer: "ECL 2.0 Licensed | Copyright © [YYYY] [Your Name]"
 
 *студент 2-го курсу, групи ІО-03* **Павло КОПКА [Посилання tg](https://t.me/kopka_pavel)**
 
+*студент 2-го курсу, групи ІО-03* **Станіслав ГОНЧАРЕНКО [Посилання tg](https://t.me/The_Wandering_Wind)**
+
+*студент 2-го курсу, групи ІО-03* **Дмитро ПАЩЕНКО [Посилання tg](https://t.me/The_Wandering_Wind)**
+
+*студент 2-го курсу, групи ІО-03* **Костянтин РЕТИВИХ [Посилання tg](https://t.me/The_Wandering_Wind)**
+
 
 **Керівник**
 
