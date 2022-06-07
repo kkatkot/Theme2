@@ -112,5 +112,63 @@
 
 </center>
 
-## Схема використання Спостерігача (Viewer)
+## Схема використання Глядача (Viewer)
 
+<center style="
+    border-radius:4px;
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+
+@startuml
+
+    title header
+        <front size=24  color=black>Схема використання Глядача
+    end header
+
+    skinparam actorStyle awesome
+
+    "Гість\n(Guest)" as Guest
+    "Глядач\n(Viewer)" as Viewer
+
+    usecase "<b>G_01\nАвторизація" as G_01
+    usecase "<b>G_01_3\nВихід з авторизації" as G_01_3
+
+    usecase "<b>V_01\nРобота зі своїми даними" as V_01
+    usecase "<b>V_01_1\nЗавантажувати дані" as V_01_1
+    usecase "<b>V_01_2\nРедагувати дані" as V_01_2
+    usecase "<b>V_01_3\nВидаляти дані" as V_01_3
+
+    usecase "<b>V_02\nЗаходити / створювати групи" as V_02
+    usecase "<b>V_02_1\nВхід у групу в якості глядача" as V_02_1
+    usecase "<b>V_02_2\nСтворити групу" as V_02_2
+    usecase "<b>V_02_3\nПередивлятися дані у групі" as V_02_3
+    
+    usecase "<b>V_03\nОтримання повідомлення" as V_03
+    usecase "<b>V_03_1\nОтримання повідомлення про зміни в групі" as V_03_1
+    usecase "<b>V_03_2\nОтримання повідомлення про зміну статусу" as V_03_2
+
+    Viewer -l-> G_01
+    Viewer -l-> V_01
+    Viewer -l-> V_02
+    Viewer -l-> V_03
+
+    G_01_3 ..> G_01
+
+    V_01_1 ..> V_01
+    V_01_2 ..> V_01
+    V_01_3 ..> V_01
+
+    V_02_1 ..> V_02
+    V_02_2 ..> V_02
+    V_02_3 ..> V_02
+
+    V_03_1 ..> V_03
+    V_03_2 ..> V_03
+
+@enduml
+
+**Схема використання Глядача**
+
+</center>
