@@ -219,3 +219,48 @@
 **Схема використання Видавця**
 
 </center>
+
+## Схема використання Адміну (Admin)
+
+<center style="
+    border-radius:4px;
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+
+@startuml
+
+    title header
+        <front size=24  color=black>Схема використання Адміна
+    end header
+
+    skinparam actorStyle awesome
+
+    "Видавець\n(Publisher)" as Publisher
+    "Адмін\n(Admin)" as Admin
+
+    Admin -u-|> Publisher
+
+    usecase "<b>A_01\nКерування групою" as A_01
+    usecase "<b>A_01_1\nЗміна назви та опису групи" as A_01_1
+    usecase "<b>A_01_2\nВиганяти учасника групи" as A_01_2
+    usecase "<b>A_01_3\nЗміна ролей учасників групи" as A_01_3
+    
+    usecase "<b>P_01\nРобота з даними у групі" as P_01
+    usecase "Має доступ до будь-яких даних" as A_02
+
+    Admin -l-> A_01
+    Admin -r-> P_01
+
+    A_01_1 ..> A_01
+    A_01_2 ..> A_01
+    A_01_3 ..> A_01
+
+    A_02 ..> P_01
+
+@enduml
+
+**Схема використання Адміна**
+
+</center>
