@@ -96,15 +96,15 @@
     Guest -d-> G_02
     Guest -r-> G_03
 
-    G_01_1 ..> G_01
-    G_01_2 ..> G_01
+    G_01_1 ..> G_01 : extends
+    G_01_2 ..> G_01 : extends
 
-    G_02_1 ..> G_02
-    G_02_2 ..> G_02
-    G_02_3 ..> G_02
+    G_02_1 ..> G_02 : extends
+    G_02_2 ..> G_02 : extends
+    G_02_3 ..> G_02 : extends
 
-    G_03_1 ..> G_03
-    G_03_2 ..> G_03
+    G_03_1 ..> G_03 : extends
+    G_03_2 ..> G_03 : extends
 
 @enduml
 
@@ -132,6 +132,8 @@
     "Гість\n(Guest)" as Guest
     "Глядач\n(Viewer)" as Viewer
 
+    Viewer -u-|> Guest
+
     usecase "<b>G_01\nАвторизація" as G_01
     usecase "<b>G_01_3\nВихід з авторизації" as G_01_3
 
@@ -154,18 +156,18 @@
     Viewer --> V_02
     Viewer -r-> V_03
 
-    G_01_3 ..> G_01
+    G_01_3 ..> G_01 : extends
 
-    V_01_1 ..> V_01
-    V_01_2 ..> V_01
-    V_01_3 ..> V_01
+    V_01_1 ..> V_01 : extends
+    V_01_2 ..> V_01 : extends
+    V_01_3 ..> V_01 : extends
 
-    V_02_1 ..> V_02
-    V_02_2 ..> V_02
-    V_02_3 ..> V_02
+    V_02_1 ..> V_02 : extends
+    V_02_2 ..> V_02 : extends
+    V_02_3 ..> V_02 : extends
 
-    V_03_1 ..> V_03
-    V_03_2 ..> V_03
+    V_03_1 ..> V_03 : extends
+    V_03_2 ..> V_03 : extends
 
 @enduml
 
@@ -207,12 +209,12 @@
     Publisher -l-> P_01
     Publisher -r-> P_02
 
-    P_01_1 ..> P_01
-    P_01_2 ..> P_01
-    P_01_3 ..> P_01
+    P_01_1 ..> P_01 : extends
+    P_01_2 ..> P_01 : extends
+    P_01_3 ..> P_01 : extends
 
-    P_02_1 ..> V_02
-    P_02 ..> G_02
+    P_02_1 ..> V_02 : extends
+    P_02 ..> G_02 : extends
 
 @enduml
 
@@ -253,9 +255,9 @@
     Admin -l-> A_01
     Admin -r-> P_01
 
-    A_01_1 ..> A_01
-    A_01_2 ..> A_01
-    A_01_3 ..> A_01
+    A_01_1 ..> A_01 : extends
+    A_01_2 ..> A_01 : extends
+    A_01_3 ..> A_01 : extends
 
     A_02 ..> P_01
 
