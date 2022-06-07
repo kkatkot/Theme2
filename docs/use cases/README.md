@@ -150,9 +150,9 @@
     usecase "<b>V_03_2\nОтримання повідомлення про зміну статусу" as V_03_2
 
     Viewer -l-> G_01
-    Viewer -l-> V_01
-    Viewer -l-> V_02
-    Viewer -l-> V_03
+    Viewer --> V_01
+    Viewer --> V_02
+    Viewer -r-> V_03
 
     G_01_3 ..> G_01
 
@@ -170,5 +170,52 @@
 @enduml
 
 **Схема використання Глядача**
+
+</center>
+
+## Схема використання Видавця (Publisher)
+
+<center style="
+    border-radius:4px;
+    border: 1px solid #cfd7e6;
+    box-shadow: 0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);
+    padding: 1em;"
+>
+
+@startuml
+
+    title header
+        <front size=24  color=black>Схема використання Видавця
+    end header
+
+    skinparam actorStyle awesome
+
+    "Глядач\n(Viewer)" as Viewer
+    "Видавець\n(Publisher)" as Publisher
+
+    Publisher -u-|> Viewer
+
+    usecase "<b>P_01\nРобота з своїми даними у групі" as P_01
+    usecase "<b>P_01_1\nЗавантажувати дані у групу" as P_01_1
+    usecase "<b>P_01_2\nРедагувати дані у групі" as P_01_2
+    usecase "<b>P_01_3\nВидаляти дані з групи" as P_01_3
+    
+    usecase "<b>P_02\nВільний перегляд даних у групі" as P_02
+    usecase "<b>P_02_1\nСкачувати дані з групи" as P_01_1
+    usecase "<b>G_02\nПерегляд дних" as G_01
+
+    Publisher -l-> P_01
+    Publisher -r-> P_02
+
+    P_01_1 ..> P_01
+    P_01_2 ..> P_01
+    P_01_3 ..> P_01
+
+    P_02_1 ..> V_02
+    P_02 ..> G_02
+
+@enduml
+
+**Схема використання Видавця**
 
 </center>
