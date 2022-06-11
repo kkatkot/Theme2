@@ -3,7 +3,7 @@ home: true
 actionText: Розпочати →
 actionLink: /intro/
 
-footer: "ECL 2.0 Licensed | Copyright © [YYYY] [Your Name]"
+footer: "ECL 2.0 Licensed | Copyright © [2022] [Your Name]"
 ---
 
 
@@ -15,9 +15,9 @@ footer: "ECL 2.0 Licensed | Copyright © [YYYY] [Your Name]"
 
 *студент 2-го курсу, групи ІО-03* **Станіслав ГОНЧАРЕНКО [Посилання tg](https://t.me/The_Wandering_Wind)**
 
-*студент 2-го курсу, групи ІО-03* **Дмитро ПАЩЕНКО [Посилання tg](https://t.me/The_Wandering_Wind)**
+*студент 2-го курсу, групи ІО-03* **Дмитро ПАЩЕНКО [Посилання tg](https://t.me/lKr1st0l)**
 
-*студент 2-го курсу, групи ІО-03* **Костянтин РЕТИВИХ [Посилання tg](https://t.me/The_Wandering_Wind)**
+*студент 2-го курсу, групи ІО-03* **Костянтин РЕТИВИХ [Посилання tg](https://t.me/KostikRetyvykh)**
 
 
 **Керівник**
