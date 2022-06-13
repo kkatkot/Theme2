@@ -14,7 +14,7 @@
 @startuml
 
     title header
-        <front size=24  color=black>Діаграма прецедентів
+        <font size=24  color=black>Діаграма прецедентів
     end header
 
     skinparam actorStyle awesome
@@ -71,9 +71,9 @@
 
 @startuml
 
-    title header
-        <front size=24  color=black>Схема використання Гістя
-    end header
+    title 
+        <font size=24  color=black>Схема використання Гістя
+    end title
 
     skinparam actorStyle awesome
 
@@ -89,8 +89,8 @@
     usecase "<b>G_02_3\nПереключення графічного режиму" as G_02_3 #line.dashed
 
     usecase "<b>G_03\nПошук даних" as G_03 #b2b2b2
-    usecase "<b>G_03_1\nПошук по назві" as G_03_01 #line.dashed
-    usecase "<b>G_03_2\nПошук по тегам" as G_03_02 #line.dashed
+    usecase "<b>G_03_1\nПошук по назві" as G_03_1 #line.dashed
+    usecase "<b>G_03_2\nПошук по тегам" as G_03_2 #line.dashed
 
     Guest -l-> G_01
     Guest -d-> G_02
@@ -123,9 +123,9 @@
 
 @startuml
 
-    title header
-        <front size=24  color=black>Схема використання Глядача
-    end header
+    title 
+        <font size=24  color=black>Схема використання Глядача
+    end title 
 
     skinparam actorStyle awesome
 
@@ -186,9 +186,9 @@
 
 @startuml
 
-    title header
-        <front size=24  color=black>Схема використання Видавця
-    end header
+    title 
+        <font size=24  color=black>Схема використання Видавця
+    end title
 
     skinparam actorStyle awesome
 
@@ -203,8 +203,8 @@
     usecase "<b>P_01_3\nВидаляти дані з групи" as P_01_3 #line.dashed
     
     usecase "<b>P_02\nВільний перегляд даних у групі" as P_02 #62ff96
-    usecase "<b>P_02_1\nСкачувати дані з групи" as P_01_1 #line.dashed
-    usecase "<b>G_02\nПерегляд дних" as G_01 #b2b2b2
+    usecase "<b>P_02_1\nСкачувати дані з групи" as P_02_1 #line.dashed
+    usecase "<b>G_02\nПерегляд дних" as G_02 #b2b2b2
 
     Publisher -l-> P_01
     Publisher -r-> P_02
@@ -213,7 +213,7 @@
     P_01_2 ..> P_01 : extends
     P_01_3 ..> P_01 : extends
 
-    P_02_1 ..> V_02 : extends
+    P_02_1 ..> P_02 : extends
     P_02 ..> G_02 : extends
 
 @enduml
@@ -233,9 +233,9 @@
 
 @startuml
 
-    title header
-        <front size=24  color=black>Схема використання Адміна
-    end header
+    title 
+        <font size=24  color=black>Схема використання Адміна
+    end title
 
     skinparam actorStyle awesome
 
@@ -292,11 +292,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> G_02_1
+        <font size=24><b>ID:</b> G_02_1
     end header
 
     title
-        <front size=20>Переглянути інформацію про дані
+        <font size=20 color=black>Переглянути інформацію про дані
     end title
 
     |Користувач|
@@ -314,11 +314,11 @@
     if (Дані знайдено?) then (так) 
         |Користувач|
         :Завантажує сторінку перегляду інформації;
+        stop
     else (ні)
         |Користувач|
         :Завантажує сторінку\nповідомлення про помилку;
-
-    stop
+        stop
 
 @enduml
 </center>
@@ -348,11 +348,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> G_02_2
+        <font size=24 color=black><b>ID:</b> G_02_2
     end header
 
     title
-        <front size=20>Переглянути дані
+        <font size=20>Переглянути дані
     end title
 
     |Користувач|
@@ -370,11 +370,11 @@
     if (Дані знайдено?) then (так) 
         |Користувач|
         :Завантажує сторінку перегляду даних;
+        stop
     else (ні)
         |Користувач|
         :Завантажує сторінку\nповідомлення про помилку;
-
-    stop
+        stop
 
 @enduml
 </center>
@@ -402,11 +402,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> G_03_1
+        <font size=24 color=black><b>ID:</b> G_03_1
     end header
 
     title
-        <front size=20>Пошук даних за назвою
+        <font size=20>Пошук даних за назвою
     end title
 
     |Користувач|
@@ -420,11 +420,11 @@
     if (Знайдена хоча б одні дані?) then (так) 
         |Користувач|
         :Завантажує сторінку\nрезультату пошуку;
+        stop
     else (ні)
         |Користувач|
         :Видається повідомлення,\nщо дані не знайдено;
-
-    stop
+        stop
 
 @enduml
 </center>
@@ -456,11 +456,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> G_01_1
+        <font size=24 color=black><b>ID:</b> G_01_1
     end header
 
     title
-        <front size=20>Реєстрація користувача
+        <font size=20>Реєстрація користувача
     end title
 
     |Користувач|
@@ -541,11 +541,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> G_01_2
+        <font size=24 color=black><b>ID:</b> G_01_2
     end header
 
     title
-        <front size=20>Авторизація
+        <font size=20>Авторизація
     end title
 
     |Користувач|
@@ -567,11 +567,11 @@
     if (Чи була хоча б одна помилка?) then (так) 
         |Користувач|
         :Отримання повідомлення\nпро помилку введених даних;
+        stop
     else (ні)
         |Користувач|
         :Отримання повідомлення,\nпро успішну авторизації;
-
-    stop
+        stop
 
 @enduml
 </center>
@@ -602,11 +602,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> P_01_1
+        <font size=24 color=black><b>ID:</b> P_01_1
     end header
 
     title
-        <front size=20>Завантажання даних у групу
+        <font size=20>Завантажання даних у групу
     end title
 
     |Користувач|
@@ -621,11 +621,16 @@
         Користувач не має права публікувати дані
     end note
 
+    
     if (Користувач має доступ до дії?) then (так)
 
+        |Користувач|
         :Завантажує сторінку завантаження даних;
-        repeat :Користувач обирає та завантажує файл з даними;
         
+        repeat 
+        |Користувач|
+        :Користувач обирає та завантажує файл з даними;
+
             |Система|
             :Завантажує файл;
             :Перевіряє коретність даних;
@@ -638,6 +643,7 @@
             |Користувач|
             backward :Отримання повідомлення,\nпро некоректний тип даних;
 
+        |Система|
         repeat while (Цей тип файла пітримується?) is (ні) not (так) 
         
         |Система|
@@ -690,11 +696,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> P_01_2
+        <font size=24 color=black><b>ID:</b> P_01_2
     end header
 
     title
-        <front size=20>Редагування даних
+        <font size=20>Редагування даних
     end title
 
     |Користувач|
@@ -740,13 +746,12 @@
         |Користувач|
         :Повідомлення про успішне\nзберігання редагованих даних;
         :Завантажання сторінки\nперегляду інформації про даних;
+        stop
 
     else (ні)
         |Користувач|
         :Повідомлення про відмову доступу;
-        kill
-
-    stop
+        stop
 
 @enduml
 </center>
@@ -775,13 +780,12 @@
     padding: 1em;"
 >
 @startuml
-
-    right header
-        <front size=24><b>ID:</b> P_01_3
+right header
+        <font size=24 color=black><b>ID:</b> P_01_3
     end header
 
     title
-        <front size=20>Видалення даних
+        <font size=20>Видалення даних
     end title
 
     |Користувач|
@@ -810,35 +814,41 @@
             Дані не знайдено
         end note
 
+    else (ні)
+        |Користувач|
+        :Повідомлення про відмову доступу;
+        stop
+    endif
+            
         |Користувач|
         :Діалогово вікно про підтвердження видалення даних;
         
         if (Користувач підтвердив видалення?) then (так)
-
-        |Система|
-        :Блокування даних\n(їх не можна передивлятись, вони вважаються видаленими);
-        split
-            |Користувач|
-            :Повідомлення про видалення та можливість\nскасувати дію протягом доби;
-            :Повернення до головної сторінки, або до списку;
-            kill
-        split again
             |Система|
-            if (Протягом доби користувач скасував дію?) then (так)
-                :Розблокування даних;
-            else
-                :Видалення даних та мета-даних;
+            :Блокування даних\n(їх не можна передивлятись, вони вважаються видаленими);
 
         else (ні)
             |Користувач|
             :Скритя діалогового вікна;
             :Продовження роботи;
             kill
+        endif
 
-    else (ні)
+
         |Користувач|
-        :Повідомлення про відмову доступу;
-        kill
+        split
+            |Користувач|
+            :Повідомлення про видалення та можливість\nскасувати дію протягом доби;
+            :Повернення до головної сторінки, або до списку;
+            stop
+        split again
+            |Система|
+            if (Протягом доби користувач скасував дію?) then (так)
+                :Розблокування даних;
+                kill
+            else (ні)
+                :Видалення даних та мета-даних;
+                kill
 
 @enduml
 </center>
@@ -869,11 +879,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> A_01_1
+        <font size=24 color=black><b>ID:</b> A_01_1
     end header
 
     title
-        <front size=20>Редагування групи
+        <font size=20>Редагування групи
     end title
 
     |Користувач|
@@ -892,6 +902,13 @@
 
         |Користувач|
         :Завантаження сторінки редакції групи;
+
+    else (ні)
+        |Користувач|
+        :Повідомлення про відмову доступу;
+        stop
+    endif
+
         repeat :Редагування групи;
             :Натискає кнопку "Збереження";
             
@@ -909,19 +926,12 @@
         backward :Повідомлення про помилку в даних;
         
         |Система|
-        repeat while (Дані коретні?) then (ні)
-
-        else (так)
+        repeat while (Дані коретні?) is(ні) not (так)
             :Збереження даних;
             |Користувач|
             :Повідомлення про успішне редагування;
             :Загрузка сторінки групи;
             stop 
-
-    else (ні)
-        |Користувач|
-        :Повідомлення про відмову доступу;
-        kill
 
 @enduml
 </center>
@@ -951,11 +961,11 @@
 @startuml
 
     right header
-        <front size=24><b>ID:</b> A_01_3
+        <font size=24 сщдщк=идфсл><b>ID:</b> A_01_3
     end header
 
     title
-        <front size=20>Зміна ролі в групі
+        <font size=20>Зміна ролі в групі
     end title
 
     |Користувач|
