@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Модель прецедентів | Система управління відкритими даними</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/Theme2/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="description" content="Лабораторні роботи з дисципліни &quot;Організація баз даних&quot;">
+    
+    <link rel="preload" href="/Theme2/assets/css/0.styles.b1d17a86.css" as="style"><link rel="preload" href="/Theme2/assets/js/app.b29300bb.js" as="script"><link rel="preload" href="/Theme2/assets/js/2.43d75a1a.js" as="script"><link rel="preload" href="/Theme2/assets/js/24.cd851a4d.js" as="script"><link rel="prefetch" href="/Theme2/assets/js/10.17dc7fc0.js"><link rel="prefetch" href="/Theme2/assets/js/11.32ba2003.js"><link rel="prefetch" href="/Theme2/assets/js/12.f4d805b2.js"><link rel="prefetch" href="/Theme2/assets/js/13.b369ab95.js"><link rel="prefetch" href="/Theme2/assets/js/14.4fd45c58.js"><link rel="prefetch" href="/Theme2/assets/js/15.81d2a2d6.js"><link rel="prefetch" href="/Theme2/assets/js/16.1520ccf4.js"><link rel="prefetch" href="/Theme2/assets/js/17.f829100a.js"><link rel="prefetch" href="/Theme2/assets/js/18.393dbd29.js"><link rel="prefetch" href="/Theme2/assets/js/19.d9264299.js"><link rel="prefetch" href="/Theme2/assets/js/20.cfbcd27b.js"><link rel="prefetch" href="/Theme2/assets/js/21.e3d5f43b.js"><link rel="prefetch" href="/Theme2/assets/js/22.c606fd39.js"><link rel="prefetch" href="/Theme2/assets/js/23.9c9cf32f.js"><link rel="prefetch" href="/Theme2/assets/js/25.2d43caa3.js"><link rel="prefetch" href="/Theme2/assets/js/26.2b7d224e.js"><link rel="prefetch" href="/Theme2/assets/js/3.33d6b42d.js"><link rel="prefetch" href="/Theme2/assets/js/4.5d00dd71.js"><link rel="prefetch" href="/Theme2/assets/js/5.659aa560.js"><link rel="prefetch" href="/Theme2/assets/js/6.73f22f79.js"><link rel="prefetch" href="/Theme2/assets/js/7.a2994458.js"><link rel="prefetch" href="/Theme2/assets/js/8.e8761b22.js"><link rel="prefetch" href="/Theme2/assets/js/9.c0a843c2.js">
+    <link rel="stylesheet" href="/Theme2/assets/css/0.styles.b1d17a86.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Theme2/" class="home-link router-link-active"><!----> <span class="site-name">Система управління відкритими даними</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Theme2/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/kkatkot/Theme2" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Theme2/" class="nav-link">
+  Початок
+</a></div> <a href="https://github.com/kkatkot/Theme2" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/Theme2/intro/" class="sidebar-link">Вступ</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/Theme2/requirements/" class="sidebar-heading clickable"><span>Розроблення загальних вимог до системи</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/Theme2/use%20cases/" aria-current="page" class="active sidebar-link">Розроблення вимог до функціональности системи</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Theme2/use%20cases/#діаграма-прецедентів" class="sidebar-link">Діаграма прецедентів</a></li><li class="sidebar-sub-header"><a href="/Theme2/use%20cases/#схема-використання-гістя-guest" class="sidebar-link">Схема використання Гістя (Guest)</a></li><li class="sidebar-sub-header"><a href="/Theme2/use%20cases/#схема-використання-глядача-viewer" class="sidebar-link">Схема використання Глядача (Viewer)</a></li><li class="sidebar-sub-header"><a href="/Theme2/use%20cases/#схема-використання-видавця-publisher" class="sidebar-link">Схема використання Видавця (Publisher)</a></li><li class="sidebar-sub-header"><a href="/Theme2/use%20cases/#схема-використання-адміну-admin" class="sidebar-link">Схема використання Адміну (Admin)</a></li><li class="sidebar-sub-header"><a href="/Theme2/use%20cases/#сценаріі" class="sidebar-link">Сценарії</a></li></ul></li><li><a href="/Theme2/design/" class="sidebar-link">Проектування інформаційного забезпечення</a></li><li><a href="/Theme2/software/" class="sidebar-link">Реалізація інформаційного та програмного забезпечення</a></li><li><a href="/Theme2/test/" class="sidebar-link">Тестування працездатності системи</a></li><li><a href="/Theme2/conclusion/" class="sidebar-link">Висновки</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="модель-прецедентів"><a href="#модель-прецедентів" class="header-anchor">#</a> Модель прецедентів</h1> <p>будовування зображень діаграм здійснюється з використанням сервісу <a href="https://plantuml.com/" target="_blank" rel="noopener noreferrer">plantuml.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h2 id="діаграма-прецедентів"><a href="#діаграма-прецедентів" class="header-anchor">#</a> Діаграма прецедентів</h2> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><img src="https://www.plantuml.com/plantuml/svg/VLJDQjj04BxhAHRxqXv4sdKn51AJd78r57mA5DbU4H5RBleXjFJWs2Jj8SGbBGxaq9ytK6o7k7KilyBk6tLcLfB_bCXOMitEzyqtipFQzmFB2y9sop0ON84Jj0Gx5bPJU6J0QzVkk07pdKzYZxzXhD5fTRozUijgd5Ja3pMKaHohBjmVPSJa0fRtwaBUomdyvwe73YEY4cupPQPt_yHnFrYUrMPM8-XuxuAF4Dew5NwdBRH7GNvNGtK679T7xel3KFZ1omApV4PBLgnp_2MkV-H2nkWCuRiGT2mZzGLWDKUS2a_Zz9eLoxnHj-q4U2sde3MI8zHDaQfXlUNunoagUqMWRRyj9y1l07k4I7E073JRZglTQScAw5ZcEf7G5mtB5womMwySld_r-iW5y0Yanb2jgNm0gHUGwK0d1mvhkMsWEQ1_OP9Gtx6SgO6SC4fWBgVgFANWpr6KY29MNrLV_ii1bpBm5hgcvV-MiRm3XXwU-OCQCdK61OpL3NJ1D6F45rruoccbx1kKcDCDLE4SQ2UWf0SaEunE4rcxwWgU4PcnsK3sOidCdsF6L7z21tL93QgQgm73Ne4364Am6CmpR5NSI2bB6UKMPpMl04-dprG_awo6kf-IOcIjj46FnRW6RJDrIIn_KUvJvvtFppF-hG07MlyjZKaVovhM92rihAvq8vFErJxMhMsQeVcviXmBsbeEIRAjPutsah5BDcXuoKutFSkcPrQeytDiFCTMCjQOqLfBqHj6dcTCy2kgSQEQKcpRrok0HYoFOUp3Pmq-d_y1" alt="uml diagram"> <p><strong>Діаграма прецедентів</strong></p></center> <h2 id="схема-використання-гістя-guest"><a href="#схема-використання-гістя-guest" class="header-anchor">#</a> Схема використання Гістя (Guest)</h2> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><img src="https://www.plantuml.com/plantuml/svg/ZPJFRjf04CRlFCM8NDf3KBhRKvMWtF80lKP21hOgYh4hxwB-EP4IcXwgKhKLFJPz0nII1b5mNc7cZJhUDRPRLadC0JEptszcFeyvr2P8pA0Vrch0b-cPK86zpQxz5t5aGFVUgGFn5A0JXt5oq0w3paaJVz4Oht65Cy1BNE0IKnhYWaxfFSvmZMkQ07wZQHQWYIMggEiAk5hwf1Uz2fAW3q77nCbpyvPB1w-LZllvYNe1-7GSFJeQA6qUro7GO6zXfosoZpixqAeJQ0Nr_NRpgBNtv3Z2BtZ9pTYsy0Pdz85X4wVd0uNSfsvb-Wkyfk-s_71BtM9zs8jKenlebwhhXmY6VAKnJV4AQ0Hqcll3jj6eH0dub-M3PQYVtC-GnNFyGnD6ufLrUa7Z3KlSDPImG_qFuURMT6PTMkLJ_W2yvPzfNe2c1Vu1KukMQpNbZPZXZQz97lX-YgpqkkHUFzCvt-LxDRTFv8nxFUTGoiEaO4_-vaTTyPOnzrlhAgNqaKQuzFGhxp9LvgOMyjlCjtKsEczVuPnyW7DourmLPRTbphXLYHAUcTmRiHlkDkrELMDT5nFLME9YCXUxXMuqd1YUWNfZ-6tLPLRuifkqACLYMonAiJShVTbDMfPekIsM9RgQhHto5_-d_GK0" alt="uml diagram"> <p><strong>Схема використання Гістя</strong></p></center> <h2 id="схема-використання-глядача-viewer"><a href="#схема-використання-глядача-viewer" class="header-anchor">#</a> Схема використання Глядача (Viewer)</h2> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><img src="https://www.plantuml.com/plantuml/svg/dPNDRjf04CVlFCK8Bkq1sknMFLG9oYqFK8bJ96HWKL6CgMoZj5KF92ZjfIfL8fbRshm19Q5O3P1Nc7sZpkxw8oukiceENk_i_6RcFxlBeUTRhZ_iswKIqEFtV5k07gfdlpjmVF1w7yG1Um7G7jW3zw1bM-sJEjx82rpW2cU0SmpnDsxa24Dv9iznXcjSomdW5TxB2TxXJ7x6cQOAfnC7qT_UISzvQxbM7wosFt1V--_9P9qARz0NPaKPhsIWiFBBiVFaQ2Wy_saPB0_q42ejfdxnqZGWBMxqnAbmpMepXifBrcvrkmOTpLM7rOzrWpFpGq-qBKz0URzLFse-tpjsy1lEgJ1T8Yu9_ubocfWqQ44cYx-zcvpyBqcQ2ndW7U0IIA1jsZIXDJbKx9uZQXtBUoCwsparJ4u_S8C_YNAkUh2K0SWpQiL6Jgah8IWLg0-X-Z0Aw4IZ-lEGJGMTgkIKf-xZBpbMNpIEWJ98OCszR9wvJAOJNMZdsvqqLe0MIQcTgTF_81NGZvbIQGzlo3_Ke6UWTw-IS2I_ffdUqkSO7r8PsIuPcPRnCkgs72V-QZW7sfxggAZz793fyG59y0M4PLhOcpZTg88qLCfY1LXArk-u88vgL4ZCI5pASv88d2acI2FmxGXvOLIGQofxfFTaSaSyK0VcIYjwh_2UCj266CztQSsrriMXPA2L6pejk2BhMaaspwc95-W0rntu_zWafhaiYJ2cqJWDpdBsRtnNsTMwlYGoapJNo9zZcJdNJ7A3ZEwQMiqGuHM8TpvTq5uKqHnnPMvapOcLxRJoF6jiPYcQRJkp59rhvNdMsCnJDDzsvYdwiRLqI2_w7_m3" alt="uml diagram"> <p><strong>Схема використання Глядача</strong></p></center> <h2 id="схема-використання-видавця-publisher"><a href="#схема-використання-видавця-publisher" class="header-anchor">#</a> Схема використання Видавця (Publisher)</h2> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><img src="https://www.plantuml.com/plantuml/svg/ZPJ1Jjj048RlUOfHUYc7HEq68HL1n2rNf4gSaAArirOj7BloEgAjUW0Yw0Kf4fN2iV06b608j4bVOUQDEjwDRQMneFR1kpixtp_pxoOxEf5nCkW7jHhma_X9eC0CisVBYy84jFz5ROjr03SAedZR2QHxqCPhEiKKV-CDu2rEyGddT8HJEgOJlC4PpcW4UC61EvxUqXcD35M5FIjYzVI17twKiUo3T9CeVfzyPdbvg7JKN-oeutVyHQCCGz_smzTxlZfKyLeTf0OxXbSRmdKyRx6zqCIKLSyvPNVW1Bx-a6SLqopHyzvjMA5okJ5eV6qlu3OsqCgLMa5zosdlTj-ytG_n2kVuati-oGnu03fcmJbTiY5JCFephYERq11mGaSqn3yqjWKmeT2kmdSpWKlJ0tECeVUSppCUvtWQBw671RhByC0FLRCdkPrUjO8mBQG6DNc9NPRT5V_1RZ4xFmK-kcKkUvLpSLfoMwlSAdXMzWMD6Njk37u4ngHyyLASs6jIc4-drJs8vwmNnlfhliryswfigInVl6HvnrR-OxLKKwZXT4nfZiZUbHiPDDh6ft_NOxkU9zZJRpRjPjW4zIdXNvmke-BPQAigceT5YHQhoHRSMOxLTlZ3Vov_0G00" alt="uml diagram"> <p><strong>Схема використання Видавця</strong></p></center> <h2 id="схема-використання-адміну-admin"><a href="#схема-використання-адміну-admin" class="header-anchor">#</a> Схема використання Адміну (Admin)</h2> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;"><img src="https://www.plantuml.com/plantuml/svg/ZPFDIYD14CVlFaKHB-iXmPr8OCK4VOF0NeNGIJeuP38ZqnFsWpteXknUn8Y82-91ts3o8OaQuojKlP7LtSaa6uTbvp1qTrN__jN_hjvNaGYZTilRs03-8ZVo99YX_lOQWH-1Sh_BehC3K0ky82nMFL5hbl2UklY0Kum11pZ19vpH2Kxeb7vYZ2_uGZt02npXbAvv6XkczEjMmggffkiVYr2qGDIY8FmSVMDnyKMge3NFoE0biqTC7E03_QApG_z3kLtrN7KamwqC20N953OBJgFngJ3Vc6ZpbeDwo_LjkXd2fauiE5R4BcNRsH-b9Ss6sahMX9AGsQkM3YhR7mzzlE52JgZ31IN779g5LtRWt6fmPYAHXgbeq9-5DQ1_EDOsWdOFSCOmRMLdoPuav0gpFTUNkRhWGklf0WuBQEk6kahgCPRP7VgDCPsodBwlE1Nk_0Sy_rVrVEqpVEPUU5nJuFWWLIF_NkETKDcwVSViFXjhR1c3QGKDdvhp97IwjhrWZ5zfWuI8jrpNbTu_qosgzvW9O9_78phBKeyzcL0tqQ3kek8rJrQRnikMp9bMrq9UqvNC4-sLvN8s4NP1Vetu8QXbrFbdD9yMNOJjLgkspn5-oMy0" alt="uml diagram"> <p><strong>Схема використання Адміна</strong></p></center> <h2 id="сценаріі"><a href="#сценаріі" class="header-anchor">#</a> Сценарії</h2> <p><em><strong>ID:</strong></em> G_02_1</p> <p><em><strong>НАЗВА:</strong></em> Переглянути інформацію про дані</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, користувач</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Користувач знаходить ті дані, що його цікавлять</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка перегляду інформації про дані</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>DATA_NOT_EXIST - Дані не існує</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24&gt;&lt;b&gt;ID:&lt;/b&gt; G_02_1
+end header
+
+title
+    &lt;font size=20 color=black&gt;Переглянути інформацію про дані
+end title
+
+|Користувач|
+start
+:Натискає на назву даних;
+
+|Система|
+:Отримує запит мета-даних з ID даних;
+:Знаходить дані;
+note right #ff627d
+    Можливе DATA_NOT_EXIST
+    ----
+    Дані не знайдені
+end note    
+if (Дані знайдено?) then (так) 
+    |Користувач|
+    :Завантажує сторінку перегляду інформації;
+    stop
+else (ні)
+    |Користувач|
+    :Завантажує сторінку\nповідомлення про помилку;
+    stop
+</code></pre></div><p>@enduml
+</p></center><p></p> <hr> <p><em><strong>ID:</strong></em> G_02_2</p> <p><em><strong>НАЗВА:</strong></em> Переглянути дані</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, користувач</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Користувач знаходиться на сторінці інформації про дані</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка перегляду даних</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>DATA_NOT_EXIST - Дані не існує</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24 color=black&gt;&lt;b&gt;ID:&lt;/b&gt; G_02_2
+end header
+
+title
+    &lt;font size=20&gt;Переглянути дані
+end title
+
+|Користувач|
+start
+:Натискає на назву\n&quot;Переглянути дані&quot;;
+
+|Система|
+:Отримує запит дані ID даних;
+:Знаходить дані;
+note right #ff627d
+    Можливе DATA_NOT_EXIST
+    ----
+    Дані не знайдені
+end note    
+if (Дані знайдено?) then (так) 
+    |Користувач|
+    :Завантажує сторінку перегляду даних;
+    stop
+else (ні)
+    |Користувач|
+    :Завантажує сторінку\nповідомлення про помилку;
+    stop
+</code></pre></div><p>@enduml
+</p></center><p></p> <hr> <p><em><strong>ID:</strong></em> G_03_1</p> <p><em><strong>НАЗВА:</strong></em> Пошук даних за назвою</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, користувач</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Користувач знаходиться на будь якій сторінці</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка пошуку</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em> -</p> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24 color=black&gt;&lt;b&gt;ID:&lt;/b&gt; G_03_1
+end header
+
+title
+    &lt;font size=20&gt;Пошук даних за назвою
+end title
+
+|Користувач|
+start
+:Натискає кнопку пошуку;
+:Вводить назву;
+
+|Система|
+:Отримує запит на пошук по назві;
+:Знаходить усі дані,\nде співпадає назва;
+if (Знайдена хоча б одні дані?) then (так) 
+    |Користувач|
+    :Завантажує сторінку\nрезультату пошуку;
+    stop
+else (ні)
+    |Користувач|
+    :Видається повідомлення,\nщо дані не знайдено;
+    stop
+</code></pre></div><p>@enduml
+</p></center><p></p> <hr> <p><em><strong>ID:</strong></em> G_01_1</p> <p><em><strong>НАЗВА:</strong></em> Реєстрація користувача</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, гість</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Гість знаходиться на головній сторінці</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка зведення новин</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>REG_EMAIL_ERR_BUSY - Користувач з такою поштою існує</li> <li>REG_EMAIL_ERR_UNKORRECT - Пошта не валідна</li> <li>REG_PASSWORD_ERR_UNKORRECT - Введений пароль некоректний</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24 color=black&gt;&lt;b&gt;ID:&lt;/b&gt; G_01_1
+end header
+
+title
+    &lt;font size=20&gt;Реєстрація користувача
+end title
+
+|Користувач|
+start
+:Натискає кнопку реєстрації;
+:Завантажує сторінку реєстрації;
+
+repeat :Вводить дані: електрона пошта, пароль, підтверждення паролю;
+
+    |Система|
+    :Отримує та перевіряє правильність введених даних;
+    note right #ff627d
+        REG_EMAIL_ERR_BUSY
+        ----
+        Така пошта вже використовується
+        ====
+        REG_EMAIL_ERR_UNKORRECT
+        ----
+        Пошта не валідна
+        ====
+        REG_PASSWORD_ERR_UNKORRECT
+        ----
+        Пароль містить недопустимі символи
+        Пароль закороткий чи задовгий
+        Підтверждення паролю не співпадає
+    end note
+    
+    |Користувач|
+    backward :Отримання повідомлення про помилку у введених даних;
+
+|Система|
+repeat while (Є хоча б одна помилка?) is (так) not (ні)
+:Відправлення по пошті листа з url для підтвердження реєстрації;
+
+|Користувач|
+:Отримання повідомлення про\nнеобхідність підтвердження реєстрації;
+
+|Система|
+:Очікування переходу по відправленому url;
+
+if (Реєстрацію не підтвердженно протягом доби?) then (так)
+    :Зробити url невалідним;
+    :Видалити дані реєстрації;
+    kill
+else (ні)
+    |Користувач|
+    :При переході завантажити сторінку\nз підтвердженням реєстрації;
+    |Система|
+    :Зробити url невалідним;
+    kill
+</code></pre></div><p>@enduml
+</p></center><p></p> <hr> <p><em><strong>ID:</strong></em> G_01_2</p> <p><em><strong>НАЗВА:</strong></em> Авторизація</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, гість</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Гість знаходиться на головній сторінці</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка зведення новин</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>REG_ACCOUNT_ERR_NOT_EXIST - Такого користувача не існує</li> <li>REG_PASSWORD_ERR_UNKORRECT - Пароль введений не вірно</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24 color=black&gt;&lt;b&gt;ID:&lt;/b&gt; G_01_2
+end header
+
+title
+    &lt;font size=20&gt;Авторизація
+end title
+
+|Користувач|
+start
+:Вводить дані авторизації;
+:Натискає кнопку авторизації;
+
+|Система|
+:Отримує та перевіряє дані авторизації;
+note right #ff627d
+    REG_ACCOUNT_ERR_NOT_EXIST
+    ----
+    Користувача з такою поштую нема
+    ====
+    REG_PASSWORD_ERR_UNKORRECT
+    ----
+    Не правильний або некоректний пароль
+end note
+if (Чи була хоча б одна помилка?) then (так) 
+    |Користувач|
+    :Отримання повідомлення\nпро помилку введених даних;
+    stop
+else (ні)
+    |Користувач|
+    :Отримання повідомлення,\nпро успішну авторизації;
+    stop
+</code></pre></div><p>@enduml
+</p></center><p></p> <hr> <p><em><strong>ID:</strong></em> P_01_1</p> <p><em><strong>НАЗВА:</strong></em> Завантаження даних</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, Адмін/видавець</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Адмін/видавець знаходиться на сторінці зведення новин</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка редагування інформації про дані</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>DATA_ERR_INVALID_TYPE - Файл з даними не валідний</li> <li>ACCESS_ERR - Помилка доступа до дії</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24 color=black&gt;&lt;b&gt;ID:&lt;/b&gt; P_01_1
+end header
+
+title
+    &lt;font size=20&gt;Завантажання даних у групу
+end title
+
+|Користувач|
+start
+:Натискає кнопку створення нових даних;
+
+|Система|
+:Перевірка доступу до дії;
+note right #ff627d
+    ACCESS_ERR
+    ----
+    Користувач не має права публікувати дані
+end note
+
+
+if (Користувач має доступ до дії?) then (так)
+
+    |Користувач|
+    :Завантажує сторінку завантаження даних;
+    
+    repeat 
+    |Користувач|
+    :Користувач обирає та завантажує файл з даними;
+
+        |Система|
+        :Завантажує файл;
+        :Перевіряє коретність даних;
+        note right #ff627d
+            DATA_ERR_INVALID_TYPE
+            ----
+            Тип файла не пітримується, або невідомий
+        end note
+
+        |Користувач|
+        backward :Отримання повідомлення,\nпро некоректний тип даних;
+
+    |Система|
+    repeat while (Цей тип файла пітримується?) is (ні) not (так) 
+    
+    |Система|
+    :Призначає ID даним;
+    :Зберігає дані;
+
+    |Користувач|
+    :Завантажання сторінки з\nредакцією інформації про дані;
+    :Вводить інформацію про дані;
+    :Натискає кнопку &quot;Зберегти&quot;;
+        
+    |Система|
+    :Зберігає інформацію про дані;
+
+    |Користувач|
+    :Повідомлення, про успішне зберігання;
+
+    stop
+else (ні)
+    :Повідомлення про відмову доступа;
+    kill
+</code></pre></div><p>@enduml
+</p></center><p></p> <hr> <p><em><strong>ID:</strong></em> P_01_2</p> <p><em><strong>НАЗВА:</strong></em> Редагування даних</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, Адмін/видавець</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Адмін/видавець знаходиться на сторінці редагування інформації</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка перегляду інформації</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>DATA_ERR_NOT_EXIST - Таких даних не існує</li> <li>VIS_ERR_CANNOR_GENERATE_GRAF - Система не може згенерувати графік, таблицю, діаграму</li> <li>ACCESS_ERR - Помилка доступа до дії</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24 color=black&gt;&lt;b&gt;ID:&lt;/b&gt; P_01_2
+end header
+
+title
+    &lt;font size=20&gt;Редагування даних
+end title
+
+|Користувач|
+start
+:Натискає кнопку редагування даних;
+
+|Система|
+:Перевірка доступа до даних;
+note right #ff627d
+    ACCESS_ERR
+    ----
+    У користувача немає доступу до редакції даних
+    ====
+    DATA_ERR_NOT_EXIST
+    ----
+    Мета-дані про дані не знайдено
+end note
+
+if (Користувач має доступ до дії?) then (так)
+
+    |Система|
+    :Знаходження дані по ID;
+    note right #ff627d
+        DATA_ERR_NOT_EXIST
+        ----
+        Дані не знайдено
+    end note
+    :Відправлення дані користувачу;
+
+    |Користувач|
+    :Завантаження сторінки редагування даних;
+    :Редакція даних;
+    note right #ff627d
+        VIS_ERR_CANNOR_GENERATE_GRAF
+        ----
+        У процесі редакції даних, дані перестали\nбути можливими відобразитися графічно
+    end note
+    :Натискає кнопку &quot;Збереження&quot;;
+
+    |Система|
+    :Отримує дані та зберігає їх;
+
+    |Користувач|
+    :Повідомлення про успішне\nзберігання редагованих даних;
+    :Завантажання сторінки\nперегляду інформації про даних;
+    stop
+
+else (ні)
+    |Користувач|
+    :Повідомлення про відмову доступу;
+    stop
+</code></pre></div><p>@enduml
+</p></center><p></p> <hr> <p><em><strong>ID:</strong></em> P_01_3</p> <p><em><strong>НАЗВА:</strong></em> Видалення даних</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, Адмін/видавець</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Адмін/видавець знаходиться на сторінці інформації про даних</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка перегляду інформації</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>DATA_ERR_NOT_EXIST - Таких даних не існує</li> <li>ACCESS_ERR - Помилка доступа до дії</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+right header
+        <font size="24" color="black"><b>ID:</b> P_01_3
+    end header
+<div class="language- extra-class"><pre><code>title
+    &lt;font size=20&gt;Видалення даних
+end title
+
+|Користувач|
+start
+:Натискає кнопку видалення даних;
+
+|Система|
+:Перевірка доступа до даних;
+note right #ff627d
+    ACCESS_ERR
+    ----
+    У користувача немає доступу до редакції даних
+    ====
+    DATA_ERR_NOT_EXIST
+    ----
+    Мета-дані про дані не знайдено
+end note
+
+if (Користувач має доступ до дії?) then (так)
+
+    |Система|
+    :Знаходження дані по ID;
+    note right #ff627d
+        DATA_ERR_NOT_EXIST
+        ----
+        Дані не знайдено
+    end note
+
+else (ні)
+    |Користувач|
+    :Повідомлення про відмову доступу;
+    stop
+endif
+        
+    |Користувач|
+    :Діалогово вікно про підтвердження видалення даних;
+    
+    if (Користувач підтвердив видалення?) then (так)
+        |Система|
+        :Блокування даних\n(їх не можна передивлятись, вони вважаються видаленими);
+
+    else (ні)
+        |Користувач|
+        :Скритя діалогового вікна;
+        :Продовження роботи;
+        kill
+    endif
+
+
+    |Користувач|
+    split
+        |Користувач|
+        :Повідомлення про видалення та можливість\nскасувати дію протягом доби;
+        :Повернення до головної сторінки, або до списку;
+        stop
+    split again
+        |Система|
+        if (Протягом доби користувач скасував дію?) then (так)
+            :Розблокування даних;
+            kill
+        else (ні)
+            :Видалення даних та мета-даних;
+            kill
+</code></pre></div><p>@enduml
+</p></font></center><p></p> <hr> <p><em><strong>ID:</strong></em> A_01_1</p> <p><em><strong>НАЗВА:</strong></em> Редагування групи</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, Адмін</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Адмін знаходиться на сторінці інформації про групу</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка перегляду інформації про групу</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>DATA_ERR_REPEAT - Помилка повторення даних</li> <li>ACCESS_ERR - Помилка доступа до дії</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24 color=black&gt;&lt;b&gt;ID:&lt;/b&gt; A_01_1
+end header
+
+title
+    &lt;font size=20&gt;Редагування групи
+end title
+
+|Користувач|
+start
+:Натискає кнопку редакції групи;
+
+|Система|
+:Перевірка доступа до даних;
+note right #ff627d
+    ACCESS_ERR
+    ----
+    У користувача немає доступу до редакції даних
+end note
+
+if (Користувач має доступ до дії?) then (так)
+
+    |Користувач|
+    :Завантаження сторінки редакції групи;
+
+else (ні)
+    |Користувач|
+    :Повідомлення про відмову доступу;
+    stop
+endif
+
+    repeat :Редагування групи;
+        :Натискає кнопку &quot;Збереження&quot;;
+        
+        |Система|
+        :Отримання даних;
+        :Перевірка коретності даних;
+        note right #ff627d
+            DATA_ERR_REPEAT
+            ----
+            Вже існує група з такою назвою
+            Введені недопустимі дані
+        end note
+
+    |Користувач|
+    backward :Повідомлення про помилку в даних;
+    
+    |Система|
+    repeat while (Дані коретні?) is(ні) not (так)
+        :Збереження даних;
+        |Користувач|
+        :Повідомлення про успішне редагування;
+        :Загрузка сторінки групи;
+        stop 
+</code></pre></div><p>@enduml
+</p></center><p></p> <hr> <p><em><strong>ID:</strong></em> A_01_3</p> <p><em><strong>НАЗВА:</strong></em> Зміна ролі в групі</p> <p><em><strong>УЧАСНИКИ:</strong></em> Система, Адмін, користувач</p> <p><em><strong>ПЕРЕДУМОВИ:</strong></em> Адмін знаходиться на сторінці учасників групи</p> <p><em><strong>РЕЗУЛЬТАТ:</strong></em> Сторінка учасників групи</p> <p><em><strong>ВИКЛЮЧНІ СИТУАЦІЇ:</strong></em></p> <ul><li>ACCESS_ERR - Користувач не має доступ до дії</li></ul> <center style="border-radius:4px;border:1px solid #cfd7e6;box-shadow:0 1px 3px 0 rgba(89,105,129,.05), 0 1px 1px 0 rgba(0,0,0,.025);padding:1em;">
+@startuml
+<div class="language- extra-class"><pre><code>right header
+    &lt;font size=24 сщдщк=идфсл&gt;&lt;b&gt;ID:&lt;/b&gt; A_01_3
+end header
+
+title
+    &lt;font size=20&gt;Зміна ролі в групі
+end title
+
+|Користувач|
+start
+:Натискає та обирає у випадаючому\nсписку нову роль учаснику;
+
+|Система|
+:Перевірка доступа до дії;
+note right #ff627d
+    ACCESS_ERR
+    ----
+    У користувача немає доступу до редакції ролі
+    Користвувач намагається змінити роль іншому адміну не будучи власником групи
+end note
+
+if (Користувач має доступ до дії?) then (так)
+
+    |Система|
+    :Зміна та зберігання ролі;
+
+    |Користувач|
+    :Повідомлення про успішну зміну ролі;
+
+    stop
+
+else (ні)
+    |Користувач|
+    :Повідомлення про відмову доступу;
+    kill
+</code></pre></div><p>@enduml
+</p></center><p></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Останнє оновлення:</span> <span class="time">6/13/2022, 9:24:37 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/Theme2/assets/js/app.b29300bb.js" defer></script><script src="/Theme2/assets/js/2.43d75a1a.js" defer></script><script src="/Theme2/assets/js/24.cd851a4d.js" defer></script>
+  </body>
+</html>
