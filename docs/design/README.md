@@ -11,58 +11,90 @@
     padding: 1em;"
 >
 @startuml
+enum Statistic 
+Statistic "1" *-- "1" ID_created_work
+enum ID_created_work <<list <int>>> 
+Statistic "1" *-- "1" work_raiting
+enum work_raiting <<int>>
 
-package "User" {
-class User
+enum User #62ffe4
 User "1" *-- "1" User.ID
-User "1" *-- "1" User.Statistic
+enum User.ID <<int>>
+User "1" *-- "1" Statistic
 User "1" *-- "1" User.Email
+enum User.Email <<string>>
 User "1" *-- "1" User.Name
+enum User.Name <<string>>
 User "1" *-- "1" User.Password
-}
+enum User.Password <<string>>
 
-package "Groupe" {
-class Groupe
+enum Groupe #bcffaf
+
 Groupe "1" *-- "1" Groupe.Role
-Groupe "1" *-- "1" Groupe.Creator
+enum Groupe.Role
+Groupe.Role "1" *-- "1" Groupe.Role.viewers
+enum Groupe.Role.viewers <<list <int>>>
+Groupe.Role "1" *-- "1" Groupe.Role.publishers
+enum Groupe.Role.publishers <<list <int>>>
+Groupe.Role "1" *-- "1" Groupe.Role.admins
+enum Groupe.Role.admins <<list <int>>>
+
+Groupe "1" *-- "1" Groupe.creator
+enum Groupe.creator <<int>>
 Groupe "1" *-- "1" Groupe.ID
-Groupe "1" *-- "1" Groupe.Name
-Groupe "0..1" o-- "1" Groupe.Description
-}
+enum Groupe.ID <<int>>
+Groupe "1" *-- "1" Groupe.description
+enum Groupe.description <<string>>
+Groupe "1" *-- "1" Groupe.name
+enum Groupe.name <<string>>
 
-Groupe.Role "0..*" o-- "0..*" User
-Groupe.Creator "1" *-- "1" User
+Groupe.Role "0..*" o-- "0..*" User.ID
+Groupe.creator "1" *-- "1" User.ID
 
-package "Data" {
-class Data
+enum Data #ff627d
 Data "1" *-- "1" Data.META
+enum Data.META #ffafbc
 Data.META "1" *-- "1" Data.META.ID
-Data.META "0..*" o-- "0..*" Data.META.Tegs
-Data.META "1" *-- "1" Data.META.Name
-Data.META "1" *-- "1" Data.META.Info
-Data.META "1" *-- "1" Data.META.Author
-Data.META "1" *-- "1" Data.META.Access
-}
+enum Data.META.ID <<int>>
+Data.META "1" *-- "1" Data.META.name
+enum Data.META.name <<string>>
+Data.META "1" *-- "1" Data.META.info
+enum Data.META.info <<string>>
+Data.META "1" *-- "1" Data.META.author
+enum Data.META.author <<int>>
+Data.META "1" *-- "1" Data.META.access
+enum Data.META.access <<TypeAccess>>
+
+Data.META "1" *-- "1" Data.META.tegs
+enum Data.META.tegs <<list <int>>>
+
+enum Teg
+Teg "1" *-- "1" Teg.ID
+enum Teg.ID <<int>>
+Teg "1" *-- "1" Teg.name
+enum Teg.name <<string>>
+
+Teg "0..*" --o "0..*" Data.META.tegs
 
 Groupe "0..*" o-- "1" Data.META
-Data.META.Author "1" *-- "0..*" User
 
-package "Action" {
-class Action
-Action "1" *-- "1" Action.Target
-Action "1" *-- "1" Action.Type
-Action "1" *-- "1" Action.Initiator
-Action "1" *-- "1" Action.ID
-}
+enum Action #afbcff
+Action "1" *-- "1" Action.target
+enum Action.target <<int>>
+Action "1" *-- "1" Action.type
+enum Action.type <<TypeAction>>
+Action "1" *-- "1" Action.initiator
+enum Action.initiator <<int>>
 
-Action.Target "0..1" -- "0..1" User
-Action.Target "0..1" -- "0..1" Data.META
-Action.Target "0..1" -- "0..1" Groupe
+enum TypeAction
+Action.type "1" *-- "1" TypeAction
+
+Action.target "0..1" -- "0..1" User
+Action.target "0..1" -- "0..1" Data.META
+Action.target "0..1" -- "0..1" Teg
+Action.target "0..1" -- "0..1" Groupe
 Action "1..*" -- "1" Groupe
-Action.Initiator "1" *-- "1" User
-
-User "1..*" -- "1..*" Groupe
-
+Action.initiator "1" *-- "1" User.ID
 @enduml
 </center>
 
