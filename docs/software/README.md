@@ -4,7 +4,11 @@
 - SQL-скрипт для створення на початкового наповнення бази даних
 - RESTfull сервіс для управління даними
 
+# SQL-скрипт для створення на початкового наповнення бази даних
 
+'''SQL
+
+-- SQL Workabench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
@@ -12,7 +16,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 --
 -- Schema theme2
 --
-CREATE SCHEMA IF NOT EXISTS 'theme2' DEFAULT CHARACTER SET utf8 USE 'theme2'
+CREATE SCHEMA IF NOT EXISTS 'theme2' DEFAULT CHARACTER SET utf8;
+USE 'theme2';
 --
 -- Table structure for table `action`
 --
@@ -227,3 +232,4 @@ UNLOCK TABLES;
 
 
 -- Dump completed on 2022-06-17 14:17:02
+'''
